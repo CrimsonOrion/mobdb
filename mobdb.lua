@@ -19,6 +19,7 @@ gTextures:Initialize();
 
 gBar = require('bar');
 gDetails = require('details');
+gQuery = require('query');
 
 ashita.events.register('command', 'command_cb', function (e)
     local args = e.command:args();
@@ -45,6 +46,9 @@ ashita.events.register('command', 'command_cb', function (e)
             gDetails.ResetPosition = true;
             gBar.ResetPosition = true;
             print(chat.header('MobDB') .. chat.message('Forced position reset.'));
+
+        elseif (string.lower(args[2]) == 'query') then
+            gQuery:Command(args);
             
         elseif (string.lower(args[2]) == 'test') then
             local successCount = 0;
