@@ -631,7 +631,10 @@ return {
     ['$notes'] = function(mob, resource)
         if resource then
             if (resource.Notes) and (#resource.Notes > 0) then
-                for _, note in ipairs(resource.Notes) do
+                for i, note in ipairs(resource.Notes) do
+                    if i > 1 then
+                        gTokenState.LineBreak = true;
+                    end
                     gTokenState:DrawText(note);
                 end
             end
