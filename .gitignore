@@ -1,3 +1,5 @@
 *.zip
 *Defaults*
 *Erebos*
+tools/last_generation_report.txt
+tools/__pycache__/
